@@ -99,7 +99,7 @@ model.enable_input_require_grads()  # 开启梯度检查点时，要执行该方
 data_root_path = '/home/ericdoug/datasets/zh_cls_fudan-news'
 # 加载、处理数据集和测试集
 train_dataset_path = os.path.join(data_root_path, "train.jsonl")
-test_dataset_path = os.path.join(data_root_path,"test.jsonl")
+test_dataset_path = os.path.join(data_root_path, "test.jsonl")
 
 train_jsonl_new_path = os.path.join(data_root_path, "new_train.jsonl")
 test_jsonl_new_path =  os.path.join(data_root_path, "new_test.jsonl")
@@ -127,7 +127,7 @@ model = get_peft_model(model, config)
 
 args = TrainingArguments(
     output_dir="./output/Qwen2",
-    per_device_train_batch_size=4,
+    per_device_train_batch_size=1,
     gradient_accumulation_steps=4,
     logging_steps=10,
     num_train_epochs=2,
